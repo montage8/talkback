@@ -22,10 +22,10 @@
   <string name="template_charging">충전 %1$s 현재 배터리 수준은 %2$s퍼센트입니다.</string>
   <string name="template_charging_lite">충전 %1$s</string>
   <string name="template_language_options_menu_item">%1$s(%2$s)</string>
-  <string name="value_ringer_vibrate">현재 진동 모드로 설정 되어있습니다.</string>
-  <string name="value_ringer_silent">현재 무음으로 설정되어 있습니다.</string>
+  <string name="value_ringer_vibrate">진동 모드입니다.</string>
+  <string name="value_ringer_silent">무음입니다.</string>
   <string name="value_screen_on">화면이 켜졌습니다.</string>
-  <string name="value_screen_off">화면이 꺼집니다.</string>
+  <string name="value_screen_off">화면이 꺼졌습니다.</string>
   <string name="value_device_unlocked">기기가 잠금 해제되었습니다.</string>
   <string name="title_pref_category_audio">오디오</string>
   <string name="title_pref_speech_volume">음성 볼륨</string>
