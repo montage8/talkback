@@ -19,8 +19,8 @@
   <string name="notification_type_status_started">시작되었습니다.</string>
   <string name="notification_type_status_stopped">중지되었습니다.</string>
   <string name="template_no_text_selected">선택된 텍스트가 없습니다.</string>
-  <string name="template_charging">충전 %1$s 현재 배터리 수준은 %2$s퍼센트입니다.</string>
-  <string name="template_charging_lite">충전 %1$s</string>
+  <string name="template_charging">충전이 %1$s 현재 배터리 수준은 %2$s퍼센트입니다.</string>
+  <string name="template_charging_lite">충전이 %1$s</string>
   <string name="template_language_options_menu_item">%1$s(%2$s)</string>
   <string name="value_ringer_vibrate">진동 모드입니다.</string>
   <string name="value_ringer_silent">무음입니다.</string>
