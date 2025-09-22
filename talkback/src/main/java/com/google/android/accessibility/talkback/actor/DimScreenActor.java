@@ -353,8 +353,7 @@ public class DimScreenActor implements DeviceConfigurationMonitor.OnConfiguratio
         EVENT_ID_UNTRACKED,
         Feedback.Part.builder()
             .setVibration(
-                Feedback.Vibration.create(R.array.screen_dimmed_pattern))
-            .build());
+                Feedback.Vibration.create(R.array.screen_dimmed_pattern)));
   }
 
   @VisibleForTesting
