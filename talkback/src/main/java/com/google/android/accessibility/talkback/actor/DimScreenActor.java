@@ -34,7 +34,6 @@ import androidx.annotation.VisibleForTesting;
 import com.google.android.accessibility.talkback.DeviceConfigurationMonitor;
 import com.google.android.accessibility.talkback.DimmingOverlayView;
 import com.google.android.accessibility.talkback.Feedback;
-import com.google.android.accessibility.talkback.Feedback.Speech;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
@@ -348,30 +347,14 @@ public class DimScreenActor implements DeviceConfigurationMonitor.OnConfiguratio
   }
 
   private void announceFeedbackAndUsageHintForScreenDimmed() {
+    // Replace speech announcement with 1-second vibration feedback for security
+    // This prevents visual information from remaining on screen when it should be hidden
     pipeline.returnFeedback(
         EVENT_ID_UNTRACKED,
         Feedback.Part.builder()
-            .setSpeech(
-                Speech.builder()
-                    .setAction(Speech.Action.SPEAK)
-                    .setText(service.getString(R.string.screen_dimmed))
-                    .build()));
-    // The prompt for exiting Hide Screen mode. Need to separate it as a single Speech, instead of a
-    // hint, because it will always be interrupted by window changed event if Hide Screen is
-    // triggered from TalkBack menu or the confirm dialog.
-    pipeline.returnFeedback(
-        EVENT_ID_UNTRACKED,
-        Feedback.Part.builder()
-            .setSpeech(
-                Speech.builder()
-                    .setAction(Speech.Action.SPEAK)
-                    .setText(
-                        service.getString(
-                            R.string.screen_dimming_exit_instruction_line2,
-                            gestureShortcutMapping.getGestureFromActionKey(
-                                service.getString(R.string.shortcut_value_talkback_breakout)),
-                            service.getString(R.string.shortcut_disable_dimming)))
-                    .build()));
+            .setVibration(
+                Feedback.Vibration.create(R.array.screen_dimmed_pattern))
+            .build());
   }
 
   @VisibleForTesting

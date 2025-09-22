@@ -32,4 +32,14 @@
         <item>255</item><!-- scale -->
         <item>80</item><!-- delayMs -->
     </integer-array>
+
+    <!-- Vibration pattern for screen dimming (hiding) feedback - 1 second vibration. -->
+    <integer-array name="screen_dimmed_pattern">
+        <item>0</item>
+        <item>1000</item><!-- 1 second vibration -->
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>1</item><!-- CLICK -->
+        <item>255</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+    </integer-array>
 </resources>
