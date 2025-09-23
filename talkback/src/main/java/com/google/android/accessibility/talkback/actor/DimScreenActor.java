@@ -347,13 +347,12 @@ public class DimScreenActor implements DeviceConfigurationMonitor.OnConfiguratio
   }
 
   private void announceFeedbackAndUsageHintForScreenDimmed() {
-    // Replace speech announcement with 1-second vibration feedback for security
+    // Replace speech announcement with audio feedback for security
     // This prevents visual information from remaining on screen when it should be hidden
+    // Play deam.ogg audio file regardless of device sound/vibration mode
     pipeline.returnFeedback(
         EVENT_ID_UNTRACKED,
-        Feedback.Part.builder()
-            .setVibration(
-                Feedback.Vibration.create(R.array.screen_dimmed_pattern)));
+        Feedback.sound(R.raw.deam));
   }
 
   @VisibleForTesting
